@@ -8,11 +8,12 @@
 !.gitignore
 !README.md
 
+# Docker
+!Dockerfile
+
 # C++
 !*.cc
 !*.h
 
 # Cmake
 !CMakeLists.txt
-
-# Circle CI
