@@ -25,6 +25,6 @@ TEST_CASE("FIRST")
 		CHECK(y[0] == 10);
 		CHECK(y[1] == 22);
 		CHECK(y[2] == 34);
-		CECK(5 == 4);
+		CHECK(5 == 4);
 	}
 }
