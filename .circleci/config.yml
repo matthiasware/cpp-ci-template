@@ -1,0 +1,41 @@
+version: 1
+
+workflows:
+  version: 1
+  build_test_install:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+
+jobs:
+  build:
+    docker:
+      - image: lyrahgames/gcc-cmake-eigen-doctest:latest
+    steps:
+      - checkout
+      - run:
+          name: build
+          command: |
+            mkdir build
+            cd build
+            cmake ..
+            cmake --build .
+      - persist_to_workspace:
+          root: .
+          paths:
+            - build
+
+  test:
+    docker:
+      - image: lyrahgames/gcc-cmake-eigen-doctest:latest
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run:
+          name: test
+          command: |
+            cd build
+            ctest --verbose
