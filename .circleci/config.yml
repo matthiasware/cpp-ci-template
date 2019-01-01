@@ -5,9 +5,9 @@ workflows:
   build_test_install:
     jobs:
       - build
-      # - test:
-      #     requires:
-      #       - build
+      - test:
+          requires:
+            - build
 
 jobs:
   build:
@@ -27,15 +27,15 @@ jobs:
           paths:
             - build
 
-  # test:
-  #   docker:
-  #     - image: lyrahgames/gcc-cmake-eigen-doctest:latest
-  #   steps:
-  #     - checkout
-  #     - attach_workspace:
-  #         at: .
-  #     - run:
-  #         name: test
-  #         command: |
-  #           cd build
-  #           ctest --verbose
+  test:
+    docker:
+      - image: lyrahgames/gcc-cmake-eigen-doctest:latest
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run:
+          name: test
+          command: |
+            cd build
+            ctest --verbose
