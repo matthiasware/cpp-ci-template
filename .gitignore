@@ -13,6 +13,6 @@
 !*.h
 
 # Cmake
-!CmakeLists.txt
+!CMakeLists.txt
 
 # Circle CI
