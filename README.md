@@ -21,7 +21,10 @@
 </table>
 </b>
 
-A template for cpp projects.
+A basic template for cpp projects, including:
+- CMake
+- Doctest
+- CircleCI
 
 ### TODO
 - add meson build script
