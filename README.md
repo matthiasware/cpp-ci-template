@@ -1,8 +1,9 @@
 # Project Template CPP
 
 ### TODO
-- meson build
-- include third party library with find package
+- add meson build script
+- include boost as third party library with find package
+- include git installable package
 - make package installable
-- include third party library for download
-- create custom docker image
+- vectorize function
+- add benchmarks (second repo?)
